@@ -1,0 +1,294 @@
+/* --- Cài đặt chung --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 1200px; /* Chiều rộng phổ biến cho website */
+    margin: 0 auto; /* Căn giữa container */
+    padding: 0 15px;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    background-color: #f0f0f0;
+    padding: 8px 0;
+    font-size: 13px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+}
+.top-bar .hotline {
+    font-weight: bold;
+    color: #d00;
+}
+
+/* --- Main Header --- */
+.main-header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-header .logo img {
+    max-height: 50px; /* Điều chỉnh kích thước logo */
+}
+.search-bar {
+    display: flex;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.search-bar input {
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    width: 300px;
+}
+.search-bar button {
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.cart-section {
+    text-align: right;
+}
+.cart-section i {
+    font-size: 24px;
+    color: #555;
+}
+.cart-section span {
+    font-weight: bold;
+    display: block;
+    font-size: 14px;
+}
+.cart-section p {
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+}
+
+/* --- Main Navigation --- */
+.main-nav {
+    background-color: #3e5b98; /* Màu xanh navy từ ảnh */
+}
+.main-nav .container ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.main-nav .container ul a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-right: 1px solid #5a73ab;
+}
+.main-nav .container ul a:hover,
+.main-nav .container ul a.active {
+    background-color: #344c81;
+}
+
+/* --- Bố cục Thân trang (Sidebar + Content) --- */
+.main-content-area {
+    padding: 20px 0;
+}
+.layout-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 23%; /* Chiếm khoảng 1/4 */
+    background-color: #ffffff;
+}
+.sidebar-widget {
+    margin-bottom: 20px;
+}
+.sidebar-widget h3 {
+    background-color: #3e5b98;
+    color: white;
+    font-size: 16px;
+    padding: 12px 15px;
+    margin: 0;
+}
+.category-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #f0f0f0;
+}
+.category-menu li {
+    border-bottom: 1px solid #f0f0f0;
+}
+.category-menu li:last-child {
+    border-bottom: none;
+}
+.category-menu a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+.category-menu a:hover {
+    background-color: #f9f9f9;
+    color: #007bff;
+}
+
+/* --- Content --- */
+.content {
+    width: 75%; /* Chiếm khoảng 3/4 */
+}
+/* --- CSS cho Slider --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden; /* Quan trọng: ẩn các slide khác */
+    background-color: #333;
+}
+.slider-wrapper {
+    display: flex;
+    width: 300%; /* 100% * 3 slide */
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Hiệu ứng chuyển slide */
+}
+.slide {
+    width: 33.3333%; /* 100% / 3 slide */
+    height: 100%;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh lấp đầy khung hình */
+}
+
+/* Nút bấm Prev/Next */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+.slide-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.prev { 
+    left: 10px; 
+}
+.next { 
+    right: 10px; 
+}
+.slider-placeholder {
+    height: 450px; /* Chiều cao của slider */
+    background-color: #333; /* Màu nền giữ chỗ cho slider */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.promo-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.promo-box {
+    width: 32.5%;
+}
+.promo-box img {
+    width: 100%;
+    display: block;
+    border: 1px solid #ddd;
+}
+/* --- CSS CHO RESPONSIVE (DI ĐỘNG) --- */
+/* Áp dụng cho màn hình từ 768px trở xuống */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Container chiếm gần hết màn hình */
+        padding: 0 10px;
+    }
+
+    /* --- Sắp xếp lại Header --- */
+    .main-header .container {
+        flex-direction: column; /* Xếp chồng lên nhau */
+        align-items: flex-start; /* Căn trái */
+    }
+    .search-bar {
+        width: 100%; /* Thanh tìm kiếm chiếm toàn bộ chiều rộng */
+        margin: 15px 0;
+    }
+    .search-bar input {
+        width: 80%; /* Tăng chiều rộng ô input */
+    }
+    .cart-section {
+        align-self: flex-end; /* Đẩy giỏ hàng sang phải */
+    }
+    .top-bar .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* --- Sắp xếp lại Menu chính --- */
+    .main-nav .container ul {
+        flex-direction: column; /* Xếp menu dọc */
+        width: 100%;
+    }
+    .main-nav .container ul a {
+        text-align: center;
+        border-right: none;
+        border-bottom: 1px solid #5a73ab;
+    }
+
+    /* --- Sắp xếp lại Thân trang --- */
+    .layout-flex {
+        flex-direction: column; /* Xếp Sidebar và Content chồng lên nhau */
+    }
+    .sidebar,
+    .content {
+        width: 100%; /* Cả hai chiếm 100% chiều rộng */
+    }
+    .sidebar {
+        margin-bottom: 20px; /* Tạo khoảng cách */
+    }
+
+    /* --- Sắp xếp lại Promo Boxes --- */
+    .promo-boxes {
+        flex-direction: column;
+    }
+    .promo-box {
+        width: 100%;
+        margin-bottom: 15px; /* Thêm khoảng cách giữa các box */
+    }
+    
+    .slider-placeholder,
+    .slider-container {
+        height: 250px; /* Giảm chiều cao slider trên di động */
+    }
+}

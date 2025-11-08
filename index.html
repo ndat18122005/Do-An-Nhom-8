@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện ShoesStore</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <span class="hotline"><i class="fas fa-phone-alt"></i> 0862.701.359</span>
+            <span class="hours">Thứ 2 - CN: 8h-17:30</span>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <img src="httpslogo.png" alt="ShoesStore"> </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm sản phẩm">
+                <button>Tìm kiếm</button>
+            </div>
+            <div class="cart-section">
+                <i class="fas fa-shopping-cart"></i>
+                <span>GIỎ HÀNG CỦA BẠN</span>
+                <p>Chưa có sản phẩm</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#" class="active">TRANG CHỦ</a></li>
+                <li><a href="news.html">TIN TỨC</a></li>
+                <li><a href="#">1000+ MẪU SNEAKER HOT</a></li>
+                <li><a href="#">VIDEO REVIEW</a></li>
+                <li><a href="#">HỖ TRỢ KHÁCH HÀNG</a></li>
+                <li><a href="#">LIÊN HỆ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content-area">
+        <div class="container layout-flex">
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3><i class="fas fa-bars"></i> DANH MỤC SẢN PHẨM</h3>
+                    <ul class="category-menu">
+                        <li><a href="#">Giày Adidas cao cấp</a></li>
+                        <li><a href="#">Giày Nike cao cấp</a></li>
+                        <li><a href="#">Giày Balenciaga</a></li>
+                        <li><a href="#">Giày BalenBalenca</a></li>
+                        <li><a href="#">Giày Converse</a></li>
+                        <li><a href="#">Giày Puma</a></li>
+                        <li><a href="#">Giày VanS</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3>TIN TỨC MỚI</h3>
+                    </div>
+            </aside>
+
+            <main class="content">
+                <div class="slider-container">
+                  <div class="slider-wrapper">
+                      <div class="slide"><img src="https://via.placeholder.com/1200x450/333/FFF?text=Slide+1" alt="Slide 1"></div>
+                      <div class="slide"><img src="https://via.placeholder.com/1200x450/555/FFF?text=Slide+2" alt="Slide 2"></div>
+                      <div class="slide"><img src="https://via.placeholder.com/1200x450/777/FFF?text=Slide+3" alt="Slide 3"></div>
+                  </div>
+                  <button class="slide-btn prev" id="prevBtn">&lt;</button>
+                  <button class="slide-btn next" id="nextBtn">&gt;</button>
+              </div>
+                <div class="promo-boxes">
+                    <div class="promo-box">
+                        <img src="promo1.jpg" alt="Promo 1"> </div>
+                    <div class="promo-box">
+                        <img src="promo2.jpg" alt="Promo 2"> </div>
+                    <div class="promo-box">
+                        <img src="promo3.jpg" alt="Promo 3"> </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        const wrapper = document.querySelector('.slider-wrapper');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const slides = document.querySelectorAll('.slide');
+        
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        function updateSlider() {
+          wrapper.style.transform = `translateX(-${currentIndex * (100 / totalSlides)}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider();
+          }
+        );
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlider();
+          }
+        );
+        setInterval(() => {
+            nextBtn.click();
+        }, 5000); 
+    </script>
+</body>
+</html>
